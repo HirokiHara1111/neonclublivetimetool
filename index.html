@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NeonClubのおきんたま</title>
+<!-- サイトの表示領域を、閲覧するデバイスの幅に合わせる -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript">
+
+function keisan(){
+
+	// 設定開始
+	// 曲1
+    var pup = document.form1.goods1.selectedIndex * 270; // 曲時間
+	let min = Math.floor(pup % 3600 / 60);
+	let sec = pup % 60;
+	document.form1.field1.value = min + ':' + addZero(sec); // 小計を表示
+
+	// 曲2
+	var blue = document.form1.goods2.selectedIndex * 210; // 単価を設定
+	let mm = Math.floor(blue % 3600 / 60);
+	let ss = blue % 60;
+	document.form1.field2.value = mm + ':' + addZero(ss); // 小計を表示
+
+	// 曲3
+	var CTC = document.form1.goods3.selectedIndex * 290; // 単価を設定
+	let aa = Math.floor( CTC % 3600 / 60);
+	let bb = CTC % 60;
+	document.form1.field3.value = aa + ':' + addZero(bb); // 小計を表示
+
+	// 合計を計算
+	var total = pup + blue + CTC;
+
+	// 設定終了
+	document.form1.field_total.value = int2time(total); // 合計を表示
+}
+function addZero(x){
+	if(x < 10){
+		return '0' + x;
+	}else{
+		return x;
+	}
+}
+
+/**
+ * 秒をhh:mm:ss形式の時間に直す
+ * intt	数値
+ */
+ function int2time(intt) {
+  hour = parseInt(intt / 3600);
+  intt %= 3600;
+  min = parseInt(intt / 60);
+  sec = intt % 60;
+
+  // 数値が1桁の場合は頭に0をつける
+  if (hour < 10) hour = "0" + hour;
+  if (min < 10) min = "0" + min;
+  if (sec < 10) sec = "0" + sec;
+  
+  return hour +":"+ min +":"+sec;
+}
+</script> 
+
+</head>
+<body>
+	<h3>ライブ時間計算ツール ver1.000234828346827364</h3>
+<form action="#" name="form1">
+
+<table>
+<tr>
+<th>曲名</th>
+<th>時間</th>
+<th>演奏有無</th>
+</tr>
+<tr>
+<td>Purple</td>
+<td valign="right">　4:30　</td>
+<td><select name="goods1" onChange = "keisan()">
+<option>無</option>
+<option>有</option>
+</select></td>
+<td><input type="text" name="field1" size="8" value="0"></td>
+</tr>
+<tr>
+<td>Blue</td>
+<td valign="right">　3:30　</td>
+<td><select name="goods2" onChange ="keisan()">
+<option>無</option>
+<option>有</option>
+</select></td>
+<td><input type="text" name="field2" size="8" value="0"></td>
+</tr>
+<tr>
+<td>CTC</td>
+<td valign="right">　4:50　</td>
+<td><select name="goods3" onChange ="keisan()">
+<option>無</option>
+<option>有</option>
+</select></td>
+<td><input type="text" name="field3" size="8" value="0"></td>
+</tr>
+<tr>
+<td align="right" colspan="3"><strong>合計時間</strong></td>
+<td><input type="text" name="field_total" size="8" value="0"> </td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
