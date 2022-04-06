@@ -10,37 +10,53 @@
 function keisan(){
 
 	// 設定開始
-	// 曲1
+	// 曲1 Purple
     var pup = document.form1.goods1.selectedIndex * 270; // 曲時間
-	let min = Math.floor(pup % 3600 / 60);
-	let sec = pup % 60;
-	document.form1.field1.value = min + ':' + addZero(sec); // 小計を表示
+	document.form1.field1.value = timech(pup); //時間を表示
 
-	// 曲2
-	var blue = document.form1.goods2.selectedIndex * 210; // 単価を設定
-	let mm = Math.floor(blue % 3600 / 60);
-	let ss = blue % 60;
-	document.form1.field2.value = mm + ':' + addZero(ss); // 小計を表示
+	// 曲2 blue
+	var blue = document.form1.goods2.selectedIndex * 210; //曲時間
+	document.form1.field2.value = timech(blue);//時間を表示
 
-	// 曲3
-	var CTC = document.form1.goods3.selectedIndex * 290; // 単価を設定
-	let aa = Math.floor( CTC % 3600 / 60);
-	let bb = CTC % 60;
-	document.form1.field3.value = aa + ':' + addZero(bb); // 小計を表示
+	// 曲3 CTC
+	var CTC = document.form1.goods3.selectedIndex * 290; //曲時間
+	document.form1.field3.value = timech(CTC); //時間を表示
+
+	// 曲4 じゃがりこ
+	var jagarico = document.form1.goods4.selectedIndex * 208; //曲時間
+	document.form1.field4.value = timech(jagarico); //時間を表示
+
+	// 曲5 ディスコはつまらん
+	var disco = document.form1.goods5.selectedIndex * 137; //曲時間
+	document.form1.field5.value = timech(disco); //時間を表示
+
+	//なれたらよかった
+	var naretara = document.form1.goods6.selectedIndex * 150; //曲時間
+	document.form1.field6.value = timech(naretara); //時間を表示
+
+	var saccharin = document.form1.goods7.selectedIndex * 281; //曲時間
+	document.form1.field7.value = timech(saccharin); //時間を表示
+
+	var yurei = document.form1.goods8.selectedIndex * 208; //曲時間
+	document.form1.field8.value = timech(yurei); //時間を表示
 
 	// 合計を計算
-	var total = pup + blue + CTC;
+	var total = pup + blue + CTC + jagarico + disco + naretara + saccharin + yurei;
 
 	// 設定終了
-	document.form1.field_total.value = int2time(total); // 合計を表示
+	document.form1.field_total.value = int2time(total); //合計時間を表示
 }
-function addZero(x){
-	if(x < 10){
-		return '0' + x;
-	}else{
-		return x;
-	}
-}
+
+ function timech(x)
+ {
+	let min = Math.floor( x % 3600 / 60);
+	let sec = x % 60;
+  // 数値が1桁の場合は頭に0をつける
+  if (min < 10) min = "0" + min;
+  if (sec < 10) sec = "0" + sec;
+
+  return min +":"+sec;
+ }
 
 /**
  * 秒をhh:mm:ss形式の時間に直す
@@ -100,10 +116,57 @@ function addZero(x){
 <td><input type="text" name="field3" size="8" value="0"></td>
 </tr>
 <tr>
+	<td>じゃがりこ</td>
+	<td valign="right">　3:28　</td>
+	<td><select name="goods4" onChange ="keisan()">
+	<option>無</option>
+	<option>有</option>
+	</select></td>
+	<td><input type="text" name="field4" size="8" value="0"></td>
+	</tr>
+<tr>
+<tr>
+		<td>ディスコはつまらん</td>
+		<td valign="right">　2:17　</td>
+		<td><select name="goods5" onChange ="keisan()">
+		<option>無</option>
+		<option>有</option>
+		</select></td>
+		<td><input type="text" name="field5" size="8" value="0"></td>
+	</tr>
+	<tr>
+			<td>なれたらよかった</td>
+			<td valign="right">　2:30　</td>
+			<td><select name="goods6" onChange ="keisan()">
+			<option>無</option>
+			<option>有</option>
+			</select></td>
+			<td><input type="text" name="field6" size="8" value="0"></td>
+	</tr>
+	<tr>
+		<td>saccharin</td>
+		<td valign="right">　4:31　</td>
+		<td><select name="goods7" onChange ="keisan()">
+		<option>無</option>
+		<option>有</option>
+		</select></td>
+		<td><input type="text" name="field7" size="8" value="0"></td>
+	</tr>
+	<tr>
+		<td>幽霊</td>
+		<td valign="right">　3:20　</td>
+		<td><select name="goods8" onChange ="keisan()">
+		<option>無</option>
+		<option>有</option>
+		</select></td>
+		<td><input type="text" name="field8" size="8" value="0"></td>
+	</tr>
+	<tr>
+	<td colspan = "4">------------------------------------------------------</td>
+	</tr>
 <td align="right" colspan="3"><strong>合計時間</strong></td>
 <td><input type="text" name="field_total" size="8" value="0"> </td>
 </tr>
-
 </table>
 
 </form>
