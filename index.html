@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>NeonClubのおきんたま</title>
+<title>NeonClub livetimetool</title>
 <!-- サイトの表示領域を、閲覧するデバイスの幅に合わせる -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,23 +30,51 @@ function keisan(){
 	var disco = document.form1.goods5.selectedIndex * 137; //曲時間
 	document.form1.field5.value = timech(disco); //時間を表示
 
-	//なれたらよかった
+	// 曲6 なれたらよかった
 	var naretara = document.form1.goods6.selectedIndex * 150; //曲時間
 	document.form1.field6.value = timech(naretara); //時間を表示
 
+    // 曲7　saccharin
 	var saccharin = document.form1.goods7.selectedIndex * 271; //曲時間
 	document.form1.field7.value = timech(saccharin); //時間を表示
 
+    // 曲8　幽霊
 	var yurei = document.form1.goods8.selectedIndex * 200; //曲時間
 	document.form1.field8.value = timech(yurei); //時間を表示
 
-	// 合計を計算
-	var total = pup + blue + CTC + jagarico + disco + naretara + saccharin + yurei;
+    // 曲9　sports
+    var sports = document.form1.goods9.selectedIndex * 219; // 曲時間
+    document.form1.field9.value = timech(sports); //時間を表示
+
+	// 合計時間を計算
+	var total =   pup 
+                + blue 
+                + CTC 
+                + jagarico 
+                + disco 
+                + naretara 
+                + saccharin 
+                + yurei 
+                + sports;
+
+    //曲数計算
+    var totalsongs = document.form1.goods1.selectedIndex
+                    +document.form1.goods2.selectedIndex
+                    +document.form1.goods3.selectedIndex
+                    +document.form1.goods4.selectedIndex
+                    +document.form1.goods5.selectedIndex
+                    +document.form1.goods6.selectedIndex
+                    +document.form1.goods7.selectedIndex
+                    +document.form1.goods8.selectedIndex
+                    +document.form1.goods9.selectedIndex;
+
 
 	// 設定終了
 	document.form1.field_total.value = int2time(total); //合計時間を表示
+    document.form1.field_totalsongs.value = totalsongs;
 }
 
+//秒→mm:ss表記変換
  function timech(x)
  {
 	let min = Math.floor( x % 3600 / 60);
@@ -79,7 +107,7 @@ function keisan(){
 
 </head>
 <body>
-	<h3>ライブ時間計算ツール ver1.000234828346827364</h3>
+	<h3>ライブ時間計算ツール ver2.000234828346827364</h3>
 <form action="#" name="form1">
 
 <table>
@@ -89,41 +117,41 @@ function keisan(){
 <th>演奏有無</th>
 </tr>
 <tr>
-<td>Purple</td>
-<td valign="right">　4:30　</td>
-<td><select name="goods1" onChange = "keisan()">
-<option>無</option>
-<option>有</option>
-</select></td>
-<td><input type="text" name="field1" size="8" value="0"></td>
+        <td>Purple</td>
+        <td valign="right">　4:30　</td>
+        <td><select name="goods1" onChange = "keisan()">
+        <option>無</option>
+        <option>有</option>
+        </select></td>
+        <td><input type="text" name="field1" size="8" value="0"></td>
 </tr>
 <tr>
-<td>Blue</td>
-<td valign="right">　3:30　</td>
-<td><select name="goods2" onChange ="keisan()">
-<option>無</option>
-<option>有</option>
-</select></td>
-<td><input type="text" name="field2" size="8" value="0"></td>
+        <td>Blue</td>
+        <td valign="right">　3:30　</td>
+        <td><select name="goods2" onChange ="keisan()">
+        <option>無</option>
+        <option>有</option>
+        </select></td>
+        <td><input type="text" name="field2" size="8" value="0"></td>
 </tr>
 <tr>
-<td>CTC</td>
-<td valign="right">　4:50　</td>
-<td><select name="goods3" onChange ="keisan()">
-<option>無</option>
-<option>有</option>
-</select></td>
-<td><input type="text" name="field3" size="8" value="0"></td>
+        <td>CTC</td>
+        <td valign="right">　4:50　</td>
+        <td><select name="goods3" onChange ="keisan()">
+            <option>無</option>
+            <option>有</option>
+        </select></td>
+        <td><input type="text" name="field3" size="8" value="0"></td>
 </tr>
 <tr>
-	<td>じゃがりこ</td>
-	<td valign="right">　3:28　</td>
-	<td><select name="goods4" onChange ="keisan()">
-	<option>無</option>
-	<option>有</option>
-	</select></td>
-	<td><input type="text" name="field4" size="8" value="0"></td>
-	</tr>
+	    <td>じゃがりこ</td>
+	    <td valign="right">　3:28　</td>
+	    <td><select name="goods4" onChange ="keisan()">
+	    <option>無</option>
+	    <option>有</option>
+	    </select></td>
+	    <td><input type="text" name="field4" size="8" value="0"></td>
+</tr>
 <tr>
 <tr>
 		<td>ディスコはつまらん</td>
@@ -135,13 +163,13 @@ function keisan(){
 		<td><input type="text" name="field5" size="8" value="0"></td>
 	</tr>
 	<tr>
-			<td>なれたらよかった</td>
-			<td valign="right">　2:30　</td>
-			<td><select name="goods6" onChange ="keisan()">
-			<option>無</option>
-			<option>有</option>
-			</select></td>
-			<td><input type="text" name="field6" size="8" value="0"></td>
+		<td>なれたらよかった</td>
+		<td valign="right">　2:30　</td>
+		<td><select name="goods6" onChange ="keisan()">
+		<option>無</option>
+		<option>有</option>
+		</select></td>
+		<td><input type="text" name="field6" size="8" value="0"></td>
 	</tr>
 	<tr>
 		<td>saccharin</td>
@@ -161,11 +189,24 @@ function keisan(){
 		</select></td>
 		<td><input type="text" name="field8" size="8" value="0"></td>
 	</tr>
+    <tr>
+		<td>sports</td>
+		<td valign="right">　3:39　</td>
+		<td><select name="goods9" onChange ="keisan()">
+		<option>無</option>
+		<option>有</option>
+		</select></td>
+		<td><input type="text" name="field9" size="8" value="0"></td>
+	</tr>
 	<tr>
 	<td colspan = "4">------------------------------------------------------</td>
 	</tr>
 <td align="right" colspan="3"><strong>合計時間</strong></td>
 <td><input type="text" name="field_total" size="8" value="0"> </td>
+<tr>
+    <td align="right" colspan="3"><strong>曲数</strong></td>
+    <td><input type="text" name="field_totalsongs" size="8" value="0"> </td>
+</tr>
 </tr>
 </table>
 
