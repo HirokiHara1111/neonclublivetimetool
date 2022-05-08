@@ -1,0 +1,22 @@
+h3{
+	text-align:center;
+	background-color:rgb(130, 209, 236);
+	color:#e4e992;
+	margin:px;
+	padding:40px;
+}
+
+.txt{
+    display: inline-block;
+    width: 80%;
+    padding: em;
+    line-height: 1;    border: 1px solid rgba(55, 13, 13, 0.601);
+    box-sizing: border-box;
+    background: #f2f2f2;
+    margin: 0.5em 0;
+}
+
+body{
+	background-color:#46338a;
+	color:rgb(236, 65, 191);
+}
