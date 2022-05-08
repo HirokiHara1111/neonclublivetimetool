@@ -3,10 +3,9 @@
 <head>
 <title>NeonClub livetimetool</title>
 <!-- サイトの表示領域を、閲覧するデバイスの幅に合わせる -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript">
-
 function keisan(){
 
 	// 設定開始
@@ -112,100 +111,100 @@ function keisan(){
 
 <table>
 <tr>
-<th>曲名</th>
+<th align="left">曲名</th>
 <th>時間</th>
 <th>演奏有無</th>
 </tr>
 <tr>
         <td>Purple</td>
         <td valign="right">　4:30　</td>
-        <td><select name="goods1" onChange = "keisan()">
+        <td  align="center"><select name="goods1" onChange = "keisan()">
         <option>無</option>
         <option>有</option>
         </select></td>
-        <td><input type="text" name="field1" size="8" value="0"></td>
+        <td align="cneter"><input type="text" class = "txt" name="field1" size="8" value="0" readonly></td>
 </tr>
 <tr>
         <td>Blue</td>
         <td valign="right">　3:30　</td>
-        <td><select name="goods2" onChange ="keisan()">
+        <td align="center"><select name="goods2" onChange ="keisan()">
         <option>無</option>
         <option>有</option>
         </select></td>
-        <td><input type="text" name="field2" size="8" value="0"></td>
+        <td><input type="text" class = "txt" name="field2" size="8" value="0"  readonly></td>
 </tr>
 <tr>
         <td>CTC</td>
         <td valign="right">　4:50　</td>
-        <td><select name="goods3" onChange ="keisan()">
+        <td align="center"><select name="goods3" onChange ="keisan()">
             <option>無</option>
             <option>有</option>
         </select></td>
-        <td><input type="text" name="field3" size="8" value="0"></td>
+        <td><input type="text" class = "txt" name="field3" size="8" value="0"  readonly></td>
 </tr>
 <tr>
 	    <td>じゃがりこ</td>
 	    <td valign="right">　3:28　</td>
-	    <td><select name="goods4" onChange ="keisan()">
+	    <td align="center"><select name="goods4" onChange ="keisan()">
 	    <option>無</option>
 	    <option>有</option>
 	    </select></td>
-	    <td><input type="text" name="field4" size="8" value="0"></td>
+	    <td><input type="text"  class = "txt" name="field4" size="8" value="0"  readonly></td>
 </tr>
 <tr>
 <tr>
 		<td>ディスコはつまらん</td>
 		<td valign="right">　2:17　</td>
-		<td><select name="goods5" onChange ="keisan()">
+		<td align="center"><select name="goods5" onChange ="keisan()">
 		<option>無</option>
 		<option>有</option>
 		</select></td>
-		<td><input type="text" name="field5" size="8" value="0"></td>
+		<td><input type="text"  class = "txt" name="field5" size="8" value="0"  readonly></td>
 	</tr>
 	<tr>
 		<td>なれたらよかった</td>
 		<td valign="right">　2:30　</td>
-		<td><select name="goods6" onChange ="keisan()">
+		<td align="center"><select name="goods6" onChange ="keisan()">
 		<option>無</option>
 		<option>有</option>
 		</select></td>
-		<td><input type="text" name="field6" size="8" value="0"></td>
+		<td><input type="text" class = "txt" name="field6" size="8" value="0"  readonly></td>
 	</tr>
 	<tr>
 		<td>saccharin</td>
 		<td valign="right">　4:31　</td>
-		<td><select name="goods7" onChange ="keisan()">
+		<td align="center"><select name="goods7" onChange ="keisan()">
 		<option>無</option>
 		<option>有</option>
 		</select></td>
-		<td><input type="text" name="field7" size="8" value="0"></td>
+		<td><input type="text" class = "txt" name="field7" size="8" value="0"  readonly></td>
 	</tr>
 	<tr>
 		<td>幽霊</td>
 		<td valign="right">　3:20　</td>
-		<td><select name="goods8" onChange ="keisan()">
+		<td align="center"><select name="goods8" onChange ="keisan()">
 		<option>無</option>
 		<option>有</option>
 		</select></td>
-		<td><input type="text" name="field8" size="8" value="0"></td>
+		<td><input type="text" class = "txt" name="field8" size="8" value="0"  readonly></td>
 	</tr>
     <tr>
 		<td>sports</td>
 		<td valign="right">　3:39　</td>
-		<td><select name="goods9" onChange ="keisan()">
+		<td align="center"><select name="goods9" onChange ="keisan()">
 		<option>無</option>
 		<option>有</option>
 		</select></td>
-		<td><input type="text" name="field9" size="8" value="0"></td>
+		<td><input type="text" class = "txt" name="field9" size="8" value="0"  readonly></td>
 	</tr>
 	<tr>
-	<td colspan = "4">------------------------------------------------------</td>
+	<td colspan = "4"><hr></td>
 	</tr>
 <td align="right" colspan="3"><strong>合計時間</strong></td>
-<td><input type="text" name="field_total" size="8" value="0"> </td>
+<td><input type="text"  class = "txt" name="field_total" size="8" value="0"  readonly> </td>
 <tr>
     <td align="right" colspan="3"><strong>曲数</strong></td>
-    <td><input type="text" name="field_totalsongs" size="8" value="0"> </td>
+    <td><input type="text"  class = "txt" name="field_totalsongs" size="8" value="0"  readonly> </td>
 </tr>
 </tr>
 </table>
