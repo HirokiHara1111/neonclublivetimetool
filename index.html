@@ -45,6 +45,10 @@ function keisan(){
     var sports = document.form1.goods9.selectedIndex * 219; // 曲時間
     document.form1.field9.value = timech(sports); //時間を表示
 
+	// 曲9　sports
+	var odottesimau = document.form1.goods10.selectedIndex * 170; // 曲時間
+    document.form1.field10.value = timech(odottesimau); //時間を表示
+
 	// 合計時間を計算
 	var total =   pup 
                 + blue 
@@ -54,7 +58,8 @@ function keisan(){
                 + naretara 
                 + saccharin 
                 + yurei 
-                + sports;
+                + sports
+				+ odottesimau;
 
     //曲数計算
     var totalsongs = document.form1.goods1.selectedIndex
@@ -65,7 +70,8 @@ function keisan(){
                     +document.form1.goods6.selectedIndex
                     +document.form1.goods7.selectedIndex
                     +document.form1.goods8.selectedIndex
-                    +document.form1.goods9.selectedIndex;
+                    +document.form1.goods9.selectedIndex
+					+document.form1.goods10.selectedIndex;
 
 
 	// 設定終了
@@ -119,8 +125,8 @@ function keisan(){
         <td>Purple</td>
         <td valign="right">　4:30　</td>
         <td  align="center"><select name="goods1" onChange = "keisan()">
-        <option>無</option>
-        <option>有</option>
+			<option>無</option>
+			<option>有</option>
         </select></td>
         <td align="cneter"><input type="text" class = "txt" name="field1" size="8" value="0" readonly></td>
 </tr>
@@ -128,8 +134,8 @@ function keisan(){
         <td>Blue</td>
         <td valign="right">　3:30　</td>
         <td align="center"><select name="goods2" onChange ="keisan()">
-        <option>無</option>
-        <option>有</option>
+			<option>無</option>
+			<option>有</option>
         </select></td>
         <td><input type="text" class = "txt" name="field2" size="8" value="0"  readonly></td>
 </tr>
@@ -146,8 +152,8 @@ function keisan(){
 	    <td>じゃがりこ</td>
 	    <td valign="right">　3:28　</td>
 	    <td align="center"><select name="goods4" onChange ="keisan()">
-	    <option>無</option>
-	    <option>有</option>
+			<option>無</option>
+			<option>有</option>
 	    </select></td>
 	    <td><input type="text"  class = "txt" name="field4" size="8" value="0"  readonly></td>
 </tr>
@@ -156,47 +162,56 @@ function keisan(){
 		<td>ディスコはつまらん</td>
 		<td valign="right">　2:17　</td>
 		<td align="center"><select name="goods5" onChange ="keisan()">
-		<option>無</option>
-		<option>有</option>
+			<option>無</option>
+			<option>有</option>
 		</select></td>
 		<td><input type="text"  class = "txt" name="field5" size="8" value="0"  readonly></td>
-	</tr>
-	<tr>
+</tr>
+<tr>
 		<td>なれたらよかった</td>
 		<td valign="right">　2:30　</td>
 		<td align="center"><select name="goods6" onChange ="keisan()">
-		<option>無</option>
-		<option>有</option>
+			<option>無</option>
+			<option>有</option>
 		</select></td>
 		<td><input type="text" class = "txt" name="field6" size="8" value="0"  readonly></td>
-	</tr>
-	<tr>
+</tr>
+<tr>
 		<td>saccharin</td>
 		<td valign="right">　4:31　</td>
 		<td align="center"><select name="goods7" onChange ="keisan()">
-		<option>無</option>
-		<option>有</option>
+			<option>無</option>
+			<option>有</option>
 		</select></td>
 		<td><input type="text" class = "txt" name="field7" size="8" value="0"  readonly></td>
-	</tr>
-	<tr>
+</tr>
+<tr>
 		<td>幽霊</td>
 		<td valign="right">　3:20　</td>
 		<td align="center"><select name="goods8" onChange ="keisan()">
-		<option>無</option>
-		<option>有</option>
+			<option>無</option>
+			<option>有</option>
 		</select></td>
 		<td><input type="text" class = "txt" name="field8" size="8" value="0"  readonly></td>
-	</tr>
-    <tr>
+</tr>
+<tr>
 		<td>sports</td>
 		<td valign="right">　3:39　</td>
 		<td align="center"><select name="goods9" onChange ="keisan()">
-		<option>無</option>
-		<option>有</option>
+			<option>無</option>
+			<option>有</option>
 		</select></td>
 		<td><input type="text" class = "txt" name="field9" size="8" value="0"  readonly></td>
-	</tr>
+</tr>
+<tr>
+		<td>踊ってしまう</td>
+		<td valign="right">　2:50　</td>
+		<td align="center"><select name="goods9" onChange ="keisan()">
+			<option>無</option>
+			<option>有</option>
+		</select></td>
+		<td><input type="text" class = "txt" name="field10" size="8" value="0"  readonly></td>
+</tr>
 	<tr>
 	<td colspan = "4"><hr></td>
 	</tr>
