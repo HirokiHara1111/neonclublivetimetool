@@ -10,7 +10,7 @@ function keisan(){
 
 	// 設定開始
 	// 曲1 Purple
-    var pup = document.form1.goods1.selectedIndex * 270; // 曲時間
+    	var pup = document.form1.goods1.selectedIndex * 270; // 曲時間
 	document.form1.field1.value = timech(pup); //時間を表示
 
 	// 曲2 blue
@@ -33,24 +33,29 @@ function keisan(){
 	var naretara = document.form1.goods6.selectedIndex * 150; //曲時間
 	document.form1.field6.value = timech(naretara); //時間を表示
 
-    // 曲7　saccharin
+    	// 曲7　saccharin
 	var saccharin = document.form1.goods7.selectedIndex * 271; //曲時間
 	document.form1.field7.value = timech(saccharin); //時間を表示
 
-    // 曲8　幽霊
+    	// 曲8　幽霊
 	var yurei = document.form1.goods8.selectedIndex * 200; //曲時間
 	document.form1.field8.value = timech(yurei); //時間を表示
 
-    // 曲9　sports
-    var sports = document.form1.goods9.selectedIndex * 219; // 曲時間
-    document.form1.field9.value = timech(sports); //時間を表示
+    	// 曲9　sports
+    	var sports = document.form1.goods9.selectedIndex * 219; // 曲時間
+    	document.form1.field9.value = timech(sports); //時間を表示
 
 	// 曲10　踊ってしまう
 	var odottesimau = document.form1.goods10.selectedIndex * 170; // 曲時間
-    document.form1.field10.value = timech(odottesimau); //時間を表示
+    	document.form1.field10.value = timech(odottesimau); //時間を表示
+	
+	// 曲11 E
+	var E = document.form1.goods11.selectedIndex * 163; // 曲時間
+    	document.form1.field11.value = timech(E); //時間を表示	
 
 	// 合計時間を計算
-	var total =   pup 
+	var total =   
+	    	  pup 
                 + blue 
                 + CTC 
                 + jagarico 
@@ -59,7 +64,9 @@ function keisan(){
                 + saccharin 
                 + yurei 
                 + sports
-		+ odottesimau;
+		+ odottesimau
+		+ E;
+		
 
     //曲数計算
     var totalsongs = document.form1.goods1.selectedIndex
@@ -71,12 +78,13 @@ function keisan(){
                     +document.form1.goods7.selectedIndex
                     +document.form1.goods8.selectedIndex
                     +document.form1.goods9.selectedIndex
-    		　　+document.form1.goods10.selectedIndex;
+    		    +document.form1.goods10.selectedIndex;
+		    +document.form1.goods11.selectedIndex;
 
 
 	// 設定終了
 	document.form1.field_total.value = int2time(total); //合計時間を表示
-    document.form1.field_totalsongs.value = totalsongs;
+    	document.form1.field_totalsongs.value = totalsongs;
 }
 
 //秒→mm:ss表記変換
@@ -211,6 +219,15 @@ function keisan(){
 			<option>有</option>
 		</select></td>
 		<td><input type="text" class = "txt" name="field10" size="8" value="0"  readonly></td>
+</tr>
+<tr>
+		<td>E</td>
+		<td valign="right">　2:43　</td>
+		<td align="center"><select name="goods11" onChange ="keisan()">
+			<option>無</option>
+			<option>有</option>
+		</select></td>
+		<td><input type="text" class = "txt" name="field11" size="8" value="0"  readonly></td>
 </tr>
 	<tr>
 	<td colspan = "4"><hr></td>
