@@ -51,7 +51,12 @@ function keisan(){
 	
 	// 曲11 E
 	var E = document.form1.goods11.selectedIndex * 163; // 曲時間
-    	document.form1.field11.value = timech(E); //時間を表示	
+    	document.form1.field11.value = timech(E); //時間を表示
+
+	// 曲12 青い恋人
+	var aoikoi = document.form1.goods12.selectedIndex * 210; // 曲時間
+    	document.form1.field12.value = timech(aoikoi); //時間を表示
+	
 
 	// 合計時間を計算
 	var total =   
@@ -65,7 +70,8 @@ function keisan(){
                 + yurei 
                 + sports
 		+ odottesimau
-		+ E;
+		+ E
+		+ aoikoi;
 		
 
     //曲数計算
@@ -78,8 +84,10 @@ function keisan(){
                     +document.form1.goods7.selectedIndex
                     +document.form1.goods8.selectedIndex
                     +document.form1.goods9.selectedIndex
-    		    +document.form1.goods10.selectedIndex;
+    		    +document.form1.goods10.selectedIndex
 		    +document.form1.goods11.selectedIndex;
+		    +document.form1.goods12.selectedIndex;
+	
 
 
 	// 設定終了
@@ -228,6 +236,15 @@ function keisan(){
 			<option>有</option>
 		</select></td>
 		<td><input type="text" class = "txt" name="field11" size="8" value="0"  readonly></td>
+</tr>
+<tr>
+		<td>青い恋人</td>
+		<td valign="right">　3:30　</td>
+		<td align="center"><select name="goods12" onChange ="keisan()">
+			<option>無</option>
+			<option>有</option>
+		</select></td>
+		<td><input type="text" class = "txt" name="field12" size="8" value="0"  readonly></td>
 </tr>
 	<tr>
 	<td colspan = "4"><hr></td>
