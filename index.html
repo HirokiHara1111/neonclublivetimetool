@@ -45,7 +45,7 @@ function keisan(){
     var sports = document.form1.goods9.selectedIndex * 219; // 曲時間
     document.form1.field9.value = timech(sports); //時間を表示
 
-	// 曲9　sports
+	// 曲10　踊ってしまう
 	var odottesimau = document.form1.goods10.selectedIndex * 170; // 曲時間
     document.form1.field10.value = timech(odottesimau); //時間を表示
 
@@ -59,7 +59,7 @@ function keisan(){
                 + saccharin 
                 + yurei 
                 + sports
-				+ odottesimau;
+		+ odottesimau;
 
     //曲数計算
     var totalsongs = document.form1.goods1.selectedIndex
@@ -71,7 +71,7 @@ function keisan(){
                     +document.form1.goods7.selectedIndex
                     +document.form1.goods8.selectedIndex
                     +document.form1.goods9.selectedIndex
-					+document.form1.goods10.selectedIndex;
+    		　　+document.form1.goods10.selectedIndex;
 
 
 	// 設定終了
@@ -206,7 +206,7 @@ function keisan(){
 <tr>
 		<td>踊ってしまう</td>
 		<td valign="right">　2:50　</td>
-		<td align="center"><select name="goods9" onChange ="keisan()">
+		<td align="center"><select name="goods" onChange ="keisan()">
 			<option>無</option>
 			<option>有</option>
 		</select></td>
