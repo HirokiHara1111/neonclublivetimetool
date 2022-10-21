@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8"/>
+    <title>NeonClub livetimetool</title>
+    <!-- サイトの表示領域を、閲覧するデバイスの幅に合わせる -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript">
+            function keisan(){
+            
+                // 設定開始
+                // 曲1 Purple
+                    var pup = document.form1.goods1.selectedIndex * 270; // 曲時間
+                document.form1.field1.value = timech(pup); //時間を表示
+            
+                // 曲2 blue
+                var blue = document.form1.goods2.selectedIndex * 210; //曲時間
+                document.form1.field2.value = timech(blue);//時間を表示
+            
+                // 曲3 CTC
+                var CTC = document.form1.goods3.selectedIndex * 290; //曲時間
+                document.form1.field3.value = timech(CTC); //時間を表示
+            
+                // 曲4 じゃがりこ
+                var jagarico = document.form1.goods4.selectedIndex * 208; //曲時間
+                document.form1.field4.value = timech(jagarico); //時間を表示
+            
+                // 曲5 ディスコはつまらん
+                var disco = document.form1.goods5.selectedIndex * 137; //曲時間
+                document.form1.field5.value = timech(disco); //時間を表示
+            
+                // 曲6 なれたらよかった
+                var naretara = document.form1.goods6.selectedIndex * 150; //曲時間
+                document.form1.field6.value = timech(naretara); //時間を表示
+            
+                // 曲7　saccharin
+                var saccharin = document.form1.goods7.selectedIndex * 271; //曲時間
+                document.form1.field7.value = timech(saccharin); //時間を表示
+            
+                // 曲8　幽霊
+                var yurei = document.form1.goods8.selectedIndex * 200; //曲時間
+                document.form1.field8.value = timech(yurei); //時間を表示
+            
+                // 曲9　sports
+                var sports = document.form1.goods9.selectedIndex * 219; // 曲時間
+                document.form1.field9.value = timech(sports); //時間を表示
+            
+                // 曲10　踊ってしまう
+                var odottesimau = document.form1.goods10.selectedIndex * 170; // 曲時間
+                    document.form1.field10.value = timech(odottesimau); //時間を表示
+                
+                // 曲11 E
+                var E = document.form1.goods11.selectedIndex * 163; // 曲時間
+                    document.form1.field11.value = timech(E); //時間を表示
+            
+                // 曲12 青い恋人
+                var aoikoi = document.form1.goods12.selectedIndex * 210; // 曲時間
+                    document.form1.field12.value = timech(aoikoi); //時間を表示
+                
+            
+                // 合計時間を計算
+                var total =   
+                              pup 
+                            + blue 
+                            + CTC 
+                            + jagarico 
+                            + disco 
+                            + naretara 
+                            + saccharin 
+                            + yurei 
+                            + sports
+                            + odottesimau
+                            + E
+                            + aoikoi;
+                    
+            
+                //曲数計算
+                var totalsongs = document.form1.goods1.selectedIndex
+                                +document.form1.goods2.selectedIndex
+                                +document.form1.goods3.selectedIndex
+                                +document.form1.goods4.selectedIndex
+                                +document.form1.goods5.selectedIndex
+                                +document.form1.goods6.selectedIndex
+                                +document.form1.goods7.selectedIndex
+                                +document.form1.goods8.selectedIndex
+                                +document.form1.goods9.selectedIndex
+                                +document.form1.goods10.selectedIndex
+                                +document.form1.goods11.selectedIndex
+                                +document.form1.goods12.selectedIndex;
+                
+            
+            
+                // 設定終了
+                document.form1.field_total.value = int2time(total); //合計時間を表示
+                document.form1.field_totalsongs.value = totalsongs;
+            }
+            
+            //秒→mm:ss表記変換
+             function timech(x)
+             {
+                let min = Math.floor( x % 3600 / 60);
+                let sec = x % 60;
+                  // 数値が1桁の場合は頭に0をつける
+                 if (min < 10) min = "0" + min;
+                  if (sec < 10) sec = "0" + sec;
+            
+                 return min +":"+sec;
+             }
+            
+            /**
+             * 秒をhh:mm:ss形式の時間に直す
+             * intt	数値
+             */
+             function int2time(intt) {
+              hour = parseInt(intt / 3600);
+              intt %= 3600;
+              min = parseInt(intt / 60);
+              sec = intt % 60;
+            
+              // 数値が1桁の場合は頭に0をつける
+              if (hour < 10) hour = "0" + hour;
+              if (min < 10) min = "0" + min;
+              if (sec < 10) sec = "0" + sec;
+              
+              return hour +":"+ min +":"+sec;
+            }
+            </script> 
+    </head>
+<body>
+    <div class="headerArea">
+        <header class="grovalNavigation">
+            <img class="headimg_s" src = "img/headimg_s.png">
+            <img class="headimg_pc" src = "img/headimg_pc.png">
+        </header>
+    </div>
+    <div class ="bnrArea_sp">
+        <ul id="navi">
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="https://www.youtube.com/channel/UCxwZxlQHOsNeA_9i8qDAzvQ">youtube</a></li>
+            <li><a href="#schedule">Schedule<p>開発中</p></a></li>
+            <li><a href="tweet.html">Twitter</a></li>
+        </ul>
+    </div>
+    <div class ="main_inner">
+        <main>
+            <div class="localNavigation">
+                <div id ="bnrArea">
+                    <ul id="navi">
+                        <li><a class="active" href="#home">Home</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCxwZxlQHOsNeA_9i8qDAzvQ">youtube</a></li>
+                        <li><a href="#schedule">Schedule(開発中)</a></li>
+                        <li><a href="tweet.html">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="timeline">
+                    <a class="twitter-timeline" data-height="500" href="https://twitter.com/neon_club777?ref_src=twsrc%5Etfw">Tweets by neon_club777</a> 
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+            <!--コンテンツ部分-->
+            <div class ="content">
+                <article class="widget-livetime">
+                    <div id = "livetimetool">
+                        <h2 class = "heading--lv2">Livetime tool</h2>
+                        <form action="#" name="form1">
+                        <table align = "center">
+                            <tr>
+                            <th align="left">曲名</th>
+                            <th>時間</th>
+                            <th>演奏有無</th>
+                            </tr>
+                            <tr>
+                                    <td align="left">Purple</td>
+                                    <td valign="right">　4:30　</td>
+                                    <td  align="center"><select name="goods1" onChange = "keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td align="cneter"><input type="text" class = "txt" name="field1" size="8" value="0" readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">Blue</td>
+                                    <td valign="right">　3:30　</td>
+                                    <td align="center"><select name="goods2" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field2" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">CTC</td>
+                                    <td valign="right">　4:50　</td>
+                                    <td align="center"><select name="goods3" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field3" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">じゃがりこ</td>
+                                    <td valign="right">　3:28　</td>
+                                    <td align="center"><select name="goods4" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text"  class = "txt" name="field4" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                    <td align="left">ディスコはつまらん</td>
+                                    <td valign="right">　2:17　</td>
+                                    <td align="center"><select name="goods5" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text"  class = "txt" name="field5" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">なれたらよかった</td>
+                                    <td valign="right">　2:30　</td>
+                                    <td align="center"><select name="goods6" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field6" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">saccharin</td>
+                                    <td valign="right">　4:31　</td>
+                                    <td align="center"><select name="goods7" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field7" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">幽霊</td>
+                                    <td valign="right">　3:20　</td>
+                                    <td align="center"><select name="goods8" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field8" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">sports</td>
+                                    <td valign="right">　3:39　</td>
+                                    <td align="center"><select name="goods9" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field9" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">踊ってしまう</td>
+                                    <td valign="right">　2:50　</td>
+                                    <td align="center"><select name="goods10" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field10" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">E</td>
+                                    <td valign="right">　2:43　</td>
+                                    <td align="center"><select name="goods11" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field11" size="8" value="0"  readonly></td>
+                            </tr>
+                            <tr>
+                                    <td align="left">青い恋人</td>
+                                    <td valign="right">　3:30　</td>
+                                    <td align="center"><select name="goods12" onChange ="keisan()">
+                                        <option>無</option>
+                                        <option>有</option>
+                                    </select></td>
+                                    <td><input type="text" class = "txt" name="field12" size="8" value="0"  readonly></td>
+                            </tr>
+                                <tr>
+                                <td colspan = "4"><hr></td>
+                                </tr>
+                            <td align="right" colspan="3"><strong>合計時間</strong></td>
+                            <td><input type="text"  class = "txt1" name="field_total" size="8" value="0"  readonly> </td>
+                            <tr>
+                                <td align="right" colspan="3"><strong>曲数</strong></td>
+                                <td><input type="text"  class = "txt1" name="field_totalsongs" size="8" value="0"  readonly> </td>
+                            </tr>
+                            </tr>
+                            </table>
+                            </form>
+                        </div>
+                </article>
+            </div>
+        </main>
+    </div>
+</body>
