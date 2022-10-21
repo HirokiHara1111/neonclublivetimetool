@@ -1,23 +1,11 @@
-@media screen and (max-width: 499px) {
-    /*　画面サイズ 499pxまで適用　*/
-    .content {
-      color: red;
-    }
-  }
-  
-  @media screen and (min-width: 500px) and (max-width: 999px) {
-    /*　画面サイズ 500pxから999pxまで適用　*/
-    .content {
-      color: green;
-    }
-  }
-  
-  @media screen and (min-width:1000px) {
-    /*　画面サイズ 1000px以上から適用　*/
-    .content {
-      color: blue;
-    }
-  }
+.pc { display: block !important; }
+.sp { display: none !important; }
+ 
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+    .pc { display: none !important; }
+    .sp { display: block !important; }
+}
 
 body{
     display: flex;
