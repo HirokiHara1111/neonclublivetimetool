@@ -2,7 +2,7 @@
 .sp { display: none !important; }
  
 /* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1284px) {
     .pc { display: none !important; }
     .sp { display: block !important; }
     .grovalNavigation{
